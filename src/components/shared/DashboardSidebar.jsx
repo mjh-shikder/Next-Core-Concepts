@@ -3,7 +3,7 @@ import React from 'react';
 
 const DashboardSidebar = () => {
     return (
-        <div className='w-[200px] bg-purple-200 text-gray-800 h-screen '>
+        <div className='w-[200px] bg-purple-200 text-gray-800 h-screen fixed top-0 left-0'>
             <h2 className='font-bold text-center'>Car Cleanify</h2>
 
             <div className="flex flex-col gap-5 mt-7 px-3 py-5">
