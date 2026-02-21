@@ -1,10 +1,11 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import React from 'react';
+import Image from "next/image";
+import Link from "next/link";
+import React from "react";
 
 const Navbar = () => {
-    return (
-      <div className="h-[150px] bg-purple-200 font-bold text-5xl flex justify-center items-center  ">
+  return (
+    <div className=" bg-purple-200 text-gray-800 font-bold text-5xl flex justify-between items-center ">
+      <div className="flex items-center">
         <Link href={"/"}>
           <Image
             src={
@@ -15,16 +16,20 @@ const Navbar = () => {
             height={60}
           ></Image>
         </Link>
-        <ul>
+        <ul className="flex text-[25px] gap-5 items-center">
           <Link href={"/"}>Home</Link>
           <Link href={"/services"}>Services</Link>
           <Link href={"/reviews"}>Reviews</Link>
           <Link href={"/about-us"}>About Us</Link>
         </ul>
-
-        <Link href={'/login'}><button>Login</button></Link>
       </div>
-    );
+      <div className="">
+        <Link href={"/login"}>
+          <button>Login</button>
+        </Link>
+      </div>
+    </div>
+  );
 };
 
 export default Navbar;
