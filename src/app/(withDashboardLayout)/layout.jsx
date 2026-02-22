@@ -6,7 +6,7 @@ const layout = ({children}) => {
         <div className='flex gap-4'>
             <DashboardSidebar></DashboardSidebar>
 
-            <div className="ml-[220px]">
+            <div className="ml-[220px] ">
             {children}
             </div>
         </div>
