@@ -1,9 +1,10 @@
 import Image from "next/image";
-import { Clock, Sparkles } from "lucide-react";
+import { Clock, Link2, Sparkles } from "lucide-react";
+import Link from "next/link";
 
 export default function ServiceCard({ service }) {
     
-const { name, description, price, img, duration }= service
+  const { name, description, price, img, duration } = service || {};
   return (
     <div className="group relative bg-white dark:bg-zinc-900 rounded-2xl shadow-md hover:shadow-2xl transition-all duration-500 overflow-hidden border border-zinc-200 dark:border-zinc-800">
       {/* Image Section */}
@@ -46,9 +47,11 @@ const { name, description, price, img, duration }= service
         </div>
 
         {/* CTA Button */}
+        <Link href={`/services/${service?._id}`}>
+        
         <button className="w-full mt-4 bg-black text-white dark:bg-white dark:text-black py-3 rounded-xl font-medium hover:opacity-90 transition">
           Book Now
-        </button>
+        </button></Link>
       </div>
     </div>
   );
