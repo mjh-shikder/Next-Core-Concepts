@@ -66,22 +66,7 @@ const ServiceDetailsPage = async ({ params }) => {
                   </p>
                 </div>
 
-                {/* Features */}
-                {/* <div> */}
-                {/* <h2 className="text-2xl font-semibold mb-6">What’s Included</h2> */}
-
-                {/* <div className="grid sm:grid-cols-2 gap-6">
-                  {service.features.map((feature, index) => (
-                    <div
-                      key={index}
-                      className="bg-white p-6 rounded-2xl shadow-sm border hover:shadow-md transition"
-                    >
-                      <CheckCircle className="w-6 h-6 text-green-600 mb-3" />
-                      <p className="text-gray-700">{feature}</p>
-                    </div>
-                  ))}
-                </div> */}
-                {/* </div> */}
+               
               </div>
 
               {/* Right Pricing Card */}

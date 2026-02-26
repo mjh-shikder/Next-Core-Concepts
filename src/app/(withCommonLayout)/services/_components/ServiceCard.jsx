@@ -15,7 +15,7 @@ export default function ServiceCard({ service }) {
           fill
           className="object-cover group-hover:scale-105 transition-transform duration-700"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-t from-black/60 via-black/10 to-transparent" />
 
         {/* Price Badge */}
         <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-md text-zinc-900 px-4 py-1 rounded-full text-sm font-semibold shadow">
@@ -48,10 +48,10 @@ export default function ServiceCard({ service }) {
 
         {/* CTA Button */}
         <Link href={`/services/${service?._id}`}>
-        
-        <button className="w-full mt-4 bg-black text-white dark:bg-white dark:text-black py-3 rounded-xl font-medium hover:opacity-90 transition">
-          Book Now
-        </button></Link>
+          <button className="w-full mt-4 bg-black text-white dark:bg-white dark:text-black py-3 rounded-xl font-medium hover:opacity-90 transition">
+            Book Now
+          </button>
+        </Link>
       </div>
     </div>
   );

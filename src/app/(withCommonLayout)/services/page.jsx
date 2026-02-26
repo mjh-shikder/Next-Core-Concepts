@@ -2,16 +2,22 @@ import Container from "@/components/shared/Container";
 import React from "react";
 import ServiceCard from "./_components/ServiceCard";
 
-const getAllServices = async () => {
+const getAllServices = async (searchParams) => {
+  const getParams = new URLSearchParams(searchParams).toString();
+  console.log(getParams);
+
   const res = await fetch(
-    "https://car-washing-system-cleanify-server.vercel.app/api/v1/services",
+    `https://car-washing-system-cleanify-server.vercel.app/api/v1/services?${getParams}`,
   );
   const data = await res.json();
   return data;
 };
 
-const ServicesPage = async () => {
-  const services = await getAllServices();
+const ServicesPage = async ({ searchParams }) => {
+  const getParams = await searchParams;
+  const { searchTerm } = await searchParams;
+
+  const services = await getAllServices({ ...getParams });
   console.log(services);
 
   return (
@@ -20,13 +26,18 @@ const ServicesPage = async () => {
         <h1 className="text-3xl font-bold text-center mt-5 text-purple-700 animate-bounce  ">
           Service Page
         </h1>
-        <div className="grid grid-cols-3 gap-5 ">
-          {services?.data?.map((service) => {
-            return (
-              <ServiceCard service={service} key={service._id}></ServiceCard>
-            );
-          })}
-        </div>
+
+        {services?.meta?.total === 0 ? (
+          <div className="font-bold text-center text-3xl">No Data Found</div>
+        ) : (
+          <div className="grid grid-cols-3 gap-5 ">
+            {services?.data?.map((service) => {
+              return (
+                <ServiceCard service={service} key={service?._id}></ServiceCard>
+              );
+            })}
+          </div>
+        )}
       </Container>
     </div>
   );
