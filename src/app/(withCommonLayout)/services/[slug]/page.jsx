@@ -45,7 +45,7 @@ const ServiceDetailsPage = async ({ params }) => {
                   {service.name}
                 </h1>
                 <p className="max-w-2xl mx-auto text-lg text-gray-200">
-                  Deep cleaning protection for your vehicle's underside.
+                  Deep cleaning protection for your vehicles underside.
                 </p>
               </div>
             </div>

@@ -1,6 +1,7 @@
 import Container from "@/components/shared/Container";
 import React from "react";
 import ServiceCard from "./_components/ServiceCard";
+import SearchService from "./_components/SearchService";
 
 const getAllServices = async (searchParams) => {
   const getParams = new URLSearchParams(searchParams).toString();
@@ -26,6 +27,10 @@ const ServicesPage = async ({ searchParams }) => {
         <h1 className="text-3xl font-bold text-center mt-5 text-purple-700 animate-bounce  ">
           Service Page
         </h1>
+          {/* Searching  */}
+        <div className="my-5 ">
+          <SearchService></SearchService>
+        </div>
 
         {services?.meta?.total === 0 ? (
           <div className="font-bold text-center text-3xl">No Data Found</div>
