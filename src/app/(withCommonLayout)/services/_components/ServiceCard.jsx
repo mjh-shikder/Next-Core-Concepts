@@ -6,7 +6,7 @@ export default function ServiceCard({ service }) {
     
   const { name, description, price, img, duration } = service || {};
   return (
-    <div className="group relative bg-white dark:bg-zinc-900 rounded-2xl shadow-md hover:shadow-2xl transition-all duration-500 overflow-hidden border border-zinc-200 dark:border-zinc-800">
+    <div className="hover:animate-pulse group relative bg-white dark:bg-zinc-900 rounded-2xl shadow-md hover:shadow-2xl transition-all duration-500 overflow-hidden border border-zinc-200 dark:border-zinc-800">
       {/* Image Section */}
       <div className="relative h-56 w-full overflow-hidden">
         <Image

@@ -17,10 +17,10 @@ const ServicesPage = async () => {
   return (
     <div>
       <Container>
-        <h1 className="text-3xl font-bold text-center mt-5 text-purple-700 ">
+        <h1 className="text-3xl font-bold text-center mt-5 text-purple-700 hover:animate-pulse animate-bounce ">
           Service Page
         </h1>
-        <div className="grid grid-cols-3 gap-5">
+        <div className="grid grid-cols-3 gap-5 ">
           {services?.data?.map((service) => {
             return (
               <ServiceCard service={service} key={service._id}></ServiceCard>

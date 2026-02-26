@@ -6,7 +6,11 @@ const loading = () => {
   return (
     <div>
       <Container>
-        <div className="mt-15 grid grid-cols-3 gap-5">
+        {" "}
+        <h1 className="text-3xl font-bold text-center mt-5 text-purple-700 ">
+          Service Page
+        </h1>
+        <div className="5 grid grid-cols-3 gap-5">
           {[...Array(12)]?.map((_, index) => {
             return (
               <div
