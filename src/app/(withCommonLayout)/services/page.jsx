@@ -17,7 +17,7 @@ const ServicesPage = async () => {
   return (
     <div>
       <Container>
-        <h1 className="text-3xl font-bold text-center mt-5 text-purple-700 hover:animate-pulse animate-bounce ">
+        <h1 className="text-3xl font-bold text-center mt-5 text-purple-700 animate-bounce  ">
           Service Page
         </h1>
         <div className="grid grid-cols-3 gap-5 ">
