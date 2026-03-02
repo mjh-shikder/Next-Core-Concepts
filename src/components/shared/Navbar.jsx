@@ -1,9 +1,15 @@
+"use client"
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { use } from "react";
 import Container from "./Container";
+import { UserContext } from "@/context/UserContext";
 
 const Navbar = () => {
+
+  const { user } = use(UserContext);
+
+
   return (
     <div className="bg-purple-200">
       <Container>
@@ -27,9 +33,15 @@ const Navbar = () => {
             </ul>
           </div>
           <div className="mr-5">
-            <Link href={"/login"}>
-              <button>Login</button>
-            </Link>
+            {user ? (
+              <Link href={"/dashboard"}>
+                <button>Dashboard</button>
+              </Link>
+            ) : (
+              <Link href={"/login"}>
+                <button>Login</button>
+              </Link>
+            )}
           </div>
         </div>
       </Container>
