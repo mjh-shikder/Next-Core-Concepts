@@ -1,4 +1,5 @@
 import DashboardSidebar from '@/components/shared/DashboardSidebar';
+import Navbar from '@/components/shared/Navbar';
 import React from 'react';
 
 const layout = ({children}) => {
@@ -7,7 +8,8 @@ const layout = ({children}) => {
             <DashboardSidebar></DashboardSidebar>
 
             <div className="ml-[220px] ">
-            {children}
+                {children}
+                <Navbar></Navbar>
             </div>
         </div>
     );

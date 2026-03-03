@@ -9,14 +9,15 @@ import {
   Sparkles,
 } from "lucide-react";
 import BookingButton from '../_components/BookingButton';
+import { getSingleService } from '@/Fetching/ServicesFetching';
 
-const getSingleService = async (id) => {
-  const res = await fetch(
-    `https://car-washing-system-cleanify-server.vercel.app/api/v1/services/${id}`,
-  );
-  const data = await res.json();
-  return data;
-};
+// const getSingleService = async (id) => {
+//   const res = await fetch(
+//     `https://car-washing-system-cleanify-server.vercel.app/api/v1/services/${id}`,
+//   );
+//   const data = await res.json();
+//   return data;
+// };
 
 
 

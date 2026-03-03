@@ -2,17 +2,18 @@ import Container from "@/components/shared/Container";
 import React from "react";
 import ServiceCard from "./_components/ServiceCard";
 import SearchService from "./_components/SearchService";
+import { getAllServices } from "@/Fetching/ServicesFetching";
 
-const getAllServices = async (searchParams) => {
-  const getParams = new URLSearchParams(searchParams).toString();
-  console.log(getParams);
+// const getAllServices = async (searchParams) => {
+//   const getParams = new URLSearchParams(searchParams).toString();
+//   console.log(getParams);
 
-  const res = await fetch(
-    `https://car-washing-system-cleanify-server.vercel.app/api/v1/services?${getParams}`,
-  );
-  const data = await res.json();
-  return data;
-};
+//   const res = await fetch(
+//     `https://car-washing-system-cleanify-server.vercel.app/api/v1/services?${getParams}`,
+//   );
+//   const data = await res.json();
+//   return data;
+// };
 
 const ServicesPage = async ({ searchParams }) => {
   const getParams = await searchParams;
