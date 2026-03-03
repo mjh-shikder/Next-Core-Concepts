@@ -8,6 +8,7 @@ import {
   CheckCircle,
   Sparkles,
 } from "lucide-react";
+import BookingButton from '../_components/BookingButton';
 
 const getSingleService = async (id) => {
   const res = await fetch(
@@ -110,9 +111,8 @@ const ServiceDetailsPage = async ({ params }) => {
                     ${service.price}
                   </p>
 
-                  <button className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-xl font-medium transition">
-                    Book This Service
-                  </button>
+                <BookingButton service={service} ></BookingButton>
+                
                 </div>
               </div>
             </div>
