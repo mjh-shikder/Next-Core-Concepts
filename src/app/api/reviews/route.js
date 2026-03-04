@@ -1,4 +1,4 @@
-const reviewsData = [
+export const reviewsData = [
     {
         id: 1,  
         serviceId: 1,
@@ -32,6 +32,7 @@ const reviewsData = [
     },
 ];
 
+// POST API
 export async function POST(request) {
     const newReview = await request.json();
     console.log(newReview);
@@ -42,6 +43,7 @@ export async function POST(request) {
     })
 }
 
+// GET API
 export async function GET(request) {
  
     return Response.json({ reviewsData });
