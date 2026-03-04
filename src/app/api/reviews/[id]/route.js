@@ -15,3 +15,24 @@ export async function GET(request, { params }) {
 
     return Response.json({ review, message: "single item getting " });
 }
+
+
+// PATCH
+export async function PATCH(request, { params }) {
+
+    const { id } = await params;
+    const data = await request.json();
+
+    if (id.length != 24) { return Response.json({ message: "id is not valid" }) }
+
+    const filter = { _id: new ObjectId(id) };
+    const updateDoc = {
+        $set: data, 
+    }
+    
+    const reviewsRes = await dbConnect("reviews")
+    const review = await reviewsRes.updateOne(filter, updateDoc)
+
+
+    return Response.json({ review, message: "Item Edited Successfully " });
+}
