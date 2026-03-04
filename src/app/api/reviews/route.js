@@ -46,7 +46,7 @@ export async function POST(request) {
     })
 }
 
-// GET API (connected with db)
+// GET API All data (connected with db)
 export async function GET(request) {
     const reviewsRes = await dbConnect("reviews")
     const reviews = await reviewsRes.find({}).toArray();
