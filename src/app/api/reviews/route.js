@@ -1,3 +1,5 @@
+import { dbConnect } from "@/lib/dbConnect";
+
 export const reviewsData = [
     {
         id: 1,  
@@ -35,16 +37,18 @@ export const reviewsData = [
 // POST API
 export async function POST(request) {
     const newReview = await request.json();
-    console.log(newReview);
-    reviewsData.push({ ...newReview, id: reviewsData?.length + 1 });
+    const reviewsRes = await dbConnect("reviews")
+   const res = await reviewsRes.insertOne(newReview);
+
     return Response.json({
         message: "Review Added Successfully",
-        review: newReview,
+        review: res,
     })
 }
 
-// GET API
+// GET API (connected with db)
 export async function GET(request) {
- 
-    return Response.json({ reviewsData });
+    const reviewsRes = await dbConnect("reviews")
+    const reviews = await reviewsRes.find({}).toArray();
+    return Response.json({ reviews, message: "Getting Reviews successfully" });
 }
