@@ -34,7 +34,7 @@ export const reviewsData = [
     },
 ];
 
-// POST API
+// POST Review API
 export async function POST(request) {
     const newReview = await request.json();
     const reviewsRes = await dbConnect("reviews")
