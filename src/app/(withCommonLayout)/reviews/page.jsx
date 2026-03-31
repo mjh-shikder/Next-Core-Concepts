@@ -37,11 +37,11 @@ const ReviewsPage = async () => {
               >
                 {/* Reviewer */}
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-semibold">
-                    {review.name}
+                  <div className="w-10 h-10 rounded-full bg-gray-400 text-purple-600 flex items-center justify-center font-semibold">
+                    {review.name?.[0].toUpperCase()} 
                   </div>
                   <div>
-                    <h3 className="font-semibold text-gray-800">
+                    <h3 className="font-semibold text-purple-600">
                                 {review?.name} 
                     </h3>
                   </div>

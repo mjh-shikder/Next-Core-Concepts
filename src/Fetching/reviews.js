@@ -5,7 +5,9 @@ export const getAllReviews = async (searchParams) => {
     const getParams = new URLSearchParams(searchParams).toString();
     console.log(getParams);
 
-    const res = await fetch(`${process.env.NEXT_URL}/api/reviews?${getParams}`);
+    const res = await fetch(`${process.env.NEXT_URL}/api/reviews?${getParams}`, {
+        cache: "force-cache", // default: no-store
+    });
 
     const data = await res.json();
     return data;
